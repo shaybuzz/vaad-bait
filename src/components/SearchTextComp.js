@@ -2,12 +2,12 @@ import React from 'react';
 
 
 function SearchTextComp(props) {
-    const { hint } = props
+    const { hint, onTextChange } = props
 
 
 
     return <div>
-        <input type='text' placeholder={hint}></input>
+        <input type='text' placeholder={hint} onChange={(evt)=>onTextChange(evt.target.value)}></input>
 
     </div>
 

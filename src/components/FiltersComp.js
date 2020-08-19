@@ -10,7 +10,7 @@ function FiltersComp(props) {
 
     return <div>
         filter
-        <SearchTextComp hint='Filter by title or details' />
+        <SearchTextComp hint='Filter by title or details' onTextChange={onSearchText}/>
         <PriortySelectionComp onPriortySelected={onFilterPriorty} />
         <SortComp />
     </div>

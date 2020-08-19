@@ -18,9 +18,15 @@ function MessagesPage(props){
       }
     } 
 
+    function onSearchMsg(msg) {
+        console.log(`search the msg ${msg}`)
+
+        
+    }
+
     return <div>
         mesages page
-       <FiltersComp onFilterPriorty={onPriortyChange}/>
+       <FiltersComp onFilterPriorty={onPriortyChange} onSearchText={onSearchMsg}/>
         {allMsg}
     </div>
 
