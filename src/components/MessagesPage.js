@@ -1,15 +1,17 @@
 import React from 'react';
+import MessageComp from './MessageComp';
+import FiltersComp from "./FiltersComp";
 
 
 function MessagesPage(props){
     const {messages} = props;
-    let 
+    let allMsg = messages.map(msg => <MessageComp message={msg}/>)
 
 
     return <div>
-        
-
-        msg page
+        mesages page
+       <FiltersComp></FiltersComp>
+        {allMsg}
     </div>
 
 }
