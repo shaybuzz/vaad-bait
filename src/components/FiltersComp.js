@@ -1,39 +1,28 @@
 import React from 'react';
 import SearchTextComp from './SearchTextComp';
 import Priority from '../model/Priority';
+import SortComp from './SortComp';
 
 
-function FiltersComp() {
 
-
+function FiltersComp(props) {
+    const { onSearchText, onFilterPriorty, onSortBy } = props
 
     return <div>
         filter
         <SearchTextComp hint='Filter by title or details' />
-        <PriortySelectionComp />
+        <PriortySelectionComp onPriortySelected={onFilterPriorty} />
         <SortComp />
     </div>
 
 };
 
-function SortComp(props) {
 
-    return <div>sort
-        <fieldset id="sort">
-            <input type="radio" id='sorDate' value="date" name='sort' />
-            <label for='sorDate'>Date</label>
-            <input type="radio" id='sortPriority' value='priority' name='sort' />
-            <label for='sortPriority'>Priority</label>
-        </fieldset>
+function PriortySelectionComp(props) {
+    const { onSearchText, onPriortySelected, onSortBy } = props
 
-    </div>
-
-};
-
-
-function PriortySelectionComp() {
     return <div>
-        <select id="priority" name="cars">
+        <select id="priority" name="priorites" onChange={(evt) => onPriortySelected(evt.target.value)}>
             <option selected disabled>Filter Priority</option>
             <option value={-1}>All</option>
             <option value={Priority.Info}>Info</option>
@@ -46,3 +35,4 @@ function PriortySelectionComp() {
 
 
 export default FiltersComp;
+
