@@ -1,14 +1,20 @@
-class Message{
-    constructor(title, details, priority, imageUrl){
+import Priority from "./Priority"
+
+class Message {
+    constructor(title, details, priority, imageUrl) {
         this.title = title
         this.details = details
-        this.priority = priority
-        if(imageUrl != undefined){
+        if (priority == undefined) {
+            this.priority = Priority.Info
+        } else {
+            this.priority = priority
+        }
+        if (imageUrl != undefined) {
             this.imageUrl = imageUrl
-        }else{
+        } else {
             this.imageUrl = ''
         }
     }
 }
 
-export default Message
+export default Message;
