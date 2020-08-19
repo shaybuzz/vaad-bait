@@ -10,7 +10,7 @@ function MessagesPage(props){
 
     return <div>
         mesages page
-       <FiltersComp></FiltersComp>
+       <FiltersComp/>
         {allMsg}
     </div>
 
