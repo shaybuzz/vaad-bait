@@ -1,14 +1,15 @@
 import React from 'react';
 
 
-function MessagesPage(){
-
+function MessagesPage(props){
+    const {messages} = props;
+    let 
 
 
     return <div>
         
 
-
+        msg page
     </div>
 
 }
